@@ -33,7 +33,13 @@ Player.prototype.update = function(){};
 Player.prototype.render = function(){
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-Player.prototype.handleInput = function(){};
+Player.prototype.handleInput = function(direction){
+  switch(direction){
+    case "left":
+      this.x = this.x - width;
+      break;
+  }
+};
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
