@@ -26,7 +26,7 @@ Enemy.prototype.render = function() {
 var Player = function(){
   this.x = 0;
   this.y = 0;
-  this.sprte = 'images/char-boy.png';
+  this.sprite = 'images/char-boy.png';
 }
 
 Player.prototype.update = function(){};
@@ -43,7 +43,7 @@ Player.prototype.handleInput = function(direction){
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
-var player = New Player();
+var player = new Player();
 var allEnemies = [];
 allEnemies.push(new Enemy());
 
