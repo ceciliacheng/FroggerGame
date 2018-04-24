@@ -1,9 +1,12 @@
 // 这是我们的玩家要躲避的敌人
+var width = 101;
+var height = 80;
+var delta = 18;
 var Enemy = function() {
     // 要应用到每个敌人的实例的变量写在这里
     // 我们已经提供了一个来帮助你实现更多
-    this.x = 0;
-    this.y = 0;
+    this.x = width;
+    this.y = height - delta;
     this.speed = 0;
     // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
@@ -24,8 +27,8 @@ Enemy.prototype.render = function() {
 // 现在实现你自己的玩家类
 // 这个类需要一个 update() 函数， render() 函数和一个 handleInput()函数
 var Player = function(){
-  this.x = 0;
-  this.y = 0;
+  this.x = 2 * width;
+  this.y = 4 * height - delta;
   this.sprite = 'images/char-boy.png';
 }
 
