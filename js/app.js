@@ -7,7 +7,7 @@ var Enemy = function() {
     // 我们已经提供了一个来帮助你实现更多
     this.x = width;
     this.y = height - delta;
-    this.speed = 0;
+    this.speed = 200;
     // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
 };
@@ -17,6 +17,7 @@ var Enemy = function() {
 Enemy.prototype.update = function(dt) {
     // 你应该给每一次的移动都乘以 dt 参数，以此来保证游戏在所有的电脑上
     // 都是以同样的速度运行的
+    this.x = this.x + this.speed * dt;
 };
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
@@ -32,7 +33,8 @@ var Player = function(){
   this.sprite = 'images/char-boy.png';
 }
 
-Player.prototype.update = function(){};
+Player.prototype.update = function(){
+};
 Player.prototype.render = function(){
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
