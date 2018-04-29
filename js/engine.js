@@ -64,7 +64,17 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+    }
+
+    // 检查Player和Enemy碰撞
+    function checkCollisions(){
+      allEnemies.forEach(function(enemy){
+        if(enemy.x + width/2 > player.x && enemy.x + width/2 < player.x + width){
+                    player.x = 2 * width;
+                    player.y = 4 * height-delta;
+                }
+      })
     }
 
     /* 这个函数会遍历在 app.js 定义的存放所有敌人实例的数组，并且调用他们的 update()
