@@ -37,6 +37,16 @@ var Player = function(){
 }
 
 Player.prototype.update = function(){
+  if (this.x < 0) {
+    this.x = 0;
+  }else if (this.x > 4 * width) {
+    this.x = 4 * width
+  }else if (this.y < 0) {
+    alert("恭喜你，你赢了。")
+    this.y = 4 * height - delta;
+  }else if (this.y > 5 * height) {
+    this.y = 5 * height
+  }
 };
 Player.prototype.render = function(){
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -45,6 +55,15 @@ Player.prototype.handleInput = function(direction){
   switch(direction){
     case "left":
       this.x = this.x - width;
+      break;
+    case "right":
+      this.x = this.x + width;
+      break;
+    case "up":
+      this.y = this.y - height;
+      break;
+    case "down":
+      this.y = this.y + height;
       break;
   }
 };
